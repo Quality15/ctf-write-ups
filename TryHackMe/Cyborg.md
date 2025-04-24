@@ -1,3 +1,5 @@
+# Cyborg
+Write-Up by **Mttttt** *2025-04-24*
 
 ## Room Description
 A box involving encrypted archives, source code analysis and more.
