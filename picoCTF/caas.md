@@ -9,7 +9,7 @@ Now presenting [cowsay as a service](https://caas.mars.picoctf.net)
 
 
 - *Category*: **Web Exploitation**
-- *Difficulty*: **Easy**
+- *Difficulty*: **Medium**
 
 ## Solution 
 

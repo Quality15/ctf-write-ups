@@ -1,5 +1,11 @@
+# packer
+Write-Up by **Mttttt** *2024-05-29*
+
 ## Task description
 Reverse this linux executable? [binary](https://artifacts.picoctf.net/c_titan/20/out)
+
+- *Category*: **Reverse Engineering**
+- *Difficulty*: **Meduim**
 
 ## Solution
 Download the file and find out that this executable was packed with UPX
