@@ -201,7 +201,7 @@ A non-exhaustive list of security tools and utilities utilized across these solu
 
 For consistent styling and Obsidian compatibility, write-ups follow this template:
 
-```markdown
+````markdown
 ---
 created at: YYYY-MM-DD || HH:MM
 category: <Category Name>
@@ -232,7 +232,7 @@ difficulty: <Easy | Medium | Hard>
 
 ## Key Takeaways
 - What was learned and how this vulnerability is prevented.
-```
+````
 
 ---
 
