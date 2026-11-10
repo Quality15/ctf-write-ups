@@ -1,13 +1,31 @@
 # endianness
-Write-Up by **Mttttt** *2024-05-31*
 
-## Task description
+| Field | Value |
+| --- | --- |
+| Platform | picoCTF 2024 |
+| Category | General Skills |
+| Difficulty | Easy |
+| Date | 2024-05-31 |
+| Author | Mttttt |
+
+## Overview
+
+Determine the big-endian and little-endian representations requested by the challenge service.
+
+<details>
+<summary>Original challenge description</summary>
+
 Know of little and big endian? [Source](https://artifacts.picoctf.net/c_titan/78/flag.c)
 
 - *Category*: **General Skills**
 - *Difficulty*: **Easy**
 
-## Solution
+</details>
+
+## Analysis
+
+The supplied C code defined how the service interpreted the order of the input bytes.
+
 Download file and open it with **vim**
 
 We see source code of netcat server
@@ -48,5 +66,6 @@ Put this word to out program
 Compile and run
 Output will be Little and Big words
 
-## Answer
+## Result
+
 `picoCTF{3ndi4n_sw4p_su33ess_cfe38ef0}`

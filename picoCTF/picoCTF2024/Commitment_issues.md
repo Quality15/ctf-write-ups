@@ -1,7 +1,20 @@
 # Commitment issues
-Write-Up by **Mttttt** *2024-06-25*
 
-## Task description
+| Field | Value |
+| --- | --- |
+| Platform | picoCTF 2024 |
+| Category | General Skills |
+| Difficulty | Easy |
+| Date | 2024-06-25 |
+| Author | Mttttt |
+
+## Overview
+
+Recover a deleted flag from the history of the supplied repository.
+
+<details>
+<summary>Original challenge description</summary>
+
 I accidentally wrote the flag down. Good thing I deleted it! You download the challenge files here:
 
 - [challenge.zip](https://artifacts.picoctf.net/c_titan/138/challenge.zip)
@@ -9,7 +22,12 @@ I accidentally wrote the flag down. Good thing I deleted it! You download the ch
 - *Category*: **General Skills**
 - *Difficulty*: **Easy**
 
-## Solution
+</details>
+
+## Analysis
+
+The commit diff retained the content removed from the working copy.
+
 First of all, we need to unzip the file
 All we got is `message.txt`
 If use command `ls -lah`, we can see `.git` directory
@@ -42,5 +60,7 @@ git show b562f0b425907789d11d2fe2793e67592dc6be93:./message.txt
 ```
 
 Output is our flag
-## Answer
+
+## Result
+
 `picoCTF{s@n1t1z3_c785c319}`

@@ -1,7 +1,20 @@
 # Time Machine
-Write-Up by **Mttttt** *2024-05-28*
 
-## Task description
+| Field | Value |
+| --- | --- |
+| Platform | picoCTF 2024 |
+| Category | General Skills |
+| Difficulty | Easy |
+| Date | 2024-05-28 |
+| Author | Mttttt |
+
+## Overview
+
+Recover a previous note from the supplied Git repository.
+
+<details>
+<summary>Original challenge description</summary>
+
 What was I last working on? I remember writing a note to help me remember... You can download the challenge files here:
 
 - [challenge.zip](https://artifacts.picoctf.net/c_titan/163/challenge.zip)
@@ -9,7 +22,12 @@ What was I last working on? I remember writing a note to help me remember... You
 - *Category*: **General Skills**
 - *Difficulty*: **Easy**
 
-## Solution
+</details>
+
+## Analysis
+
+The flag appeared in a commit message.
+
 Download the file and unzip it. Go to directory `drop-in`
 
 There is only one file - `message.txt`
@@ -38,5 +56,6 @@ index 0000000..4324621
 
 And we the flag in commit `e65f..b307d`
 
-## Answer
+## Result
+
 `picoCTF{t1m3m@ch1n3_88c35e3b}`

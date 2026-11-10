@@ -1,10 +1,27 @@
-# n0s4n1ty
-|Date|Category|Difficulty|
-|--|--|--|
-|2025-04-29|Web Exploitation|Easy|
-## Task description
+# n0s4n1ty 1
+
+| Field | Value |
+| --- | --- |
+| Platform | picoCTF 2025 |
+| Category | Web Exploitation |
+| Difficulty | Easy |
+| Date | 2025-04-29 |
+
+## Overview
+
+Assess the security of the profile picture upload feature.
+
+<details>
+<summary>Original challenge description</summary>
+
 A developer has added profile picture upload functionality to a website. However, the implementation is flawed, and it presents an opportunity for you. Your mission, should you choose to accept it, is to navigate to the provided web page and locate the file upload area. Your ultimate goal is to find the hidden flag located in the `/root` directory. You can access the web application [here](http://standard-pizzas.picoctf.net:51375/)!
-## Solution 
+
+</details>
+
+## Analysis
+
+The upload mechanism accepted a file that the server subsequently executed.
+
 On the site there is a file upload functionality, and we can upload all types of files.
 I tried to upload basic *php recote code execution* file, but it was unsuccessful.
 So i tried another one php RCE:
@@ -41,5 +58,7 @@ User www-data may run the following commands on challenge:
 It means we can use **literally all** commands with *sudo* permissions.
 So lets see what is in `/root` with command `sudo ls -la /root`
 There is a file `flag.txt`, lets read it with `sudo cat /root/flag.txt`
-## Flag
+
+## Result
+
 picoCTF{wh47_c4n_u_d0_wPHP_b42a374d}

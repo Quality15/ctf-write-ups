@@ -1,13 +1,31 @@
 # Collaborative Development
-Write-Up by **Mttttt** *2024-05-29*
 
-## Task description
+| Field | Value |
+| --- | --- |
+| Platform | picoCTF 2024 |
+| Category | General Skills |
+| Difficulty | Easy |
+| Date | 2024-05-29 |
+| Author | Mttttt |
+
+## Overview
+
+Recover the flag fragments distributed across the repository's feature branches.
+
+<details>
+<summary>Original challenge description</summary>
+
 .
 
 - *Category*: **General Skills**
 - *Difficulty*: **Easy**
 
-## Solution
+</details>
+
+## Analysis
+
+Each feature branch contained a fragment of the flag in the same source file.
+
 See all branches
 ```bash
 git branch -a
@@ -44,5 +62,6 @@ print("w0rk_798f9981}")
 Result:
 `picoCTF{t3@mw0rk_m@k3s_th3_dr3@m_w0rk_798f9981}`
 
-## Answer
+## Result
+
 `picoCTF{t3@mw0rk_m@k3s_th3_dr3@m_w0rk_798f9981}`

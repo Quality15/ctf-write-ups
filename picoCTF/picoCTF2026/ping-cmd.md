@@ -1,13 +1,27 @@
----
-created at: 2026-04-29 || 16:51
-category: General Skills
-tags:
-  - picoCTF_2026
-difficulty: Easy
----
-## Task description
+# ping-cmd
+
+| Field | Value |
+| --- | --- |
+| Platform | picoCTF 2026 |
+| Category | General Skills |
+| Difficulty | Easy |
+| Date | 2026-04-29 16:51 |
+
+## Overview
+
+Assess how the ping service processes its input.
+
+<details>
+<summary>Original challenge description</summary>
+
 Can you make the server reveal its secrets? It seems to be able to ping Google DNS, but what happens if you get a little creative with your input?
-## Solution
+
+</details>
+
+## Analysis
+
+The service passed user input to a shell, creating an operating system command injection vulnerability.
+
 After trying some payloads on this server, i understood that server uses plain bash
 So, we can execute any bash commands
 For example - `8.8.8.8; ls -la` to check what directory contains:
@@ -43,5 +57,7 @@ PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 rtt min/avg/max/mdev = 9.476/9.507/9.539/0.031 ms  
 picoCTF{p1nG_c0mm@nd_3xpL0it_su33essFuL_252214ae}
 ```
-## Flag
+
+## Result
+
 `picoCTF{p1nG_c0mm@nd_3xpL0it_su33essFuL_252214ae}`

@@ -1,13 +1,31 @@
 # packer
-Write-Up by **Mttttt** *2024-05-29*
 
-## Task description
+| Field | Value |
+| --- | --- |
+| Platform | picoCTF 2024 |
+| Category | Reverse Engineering |
+| Difficulty | Medium |
+| Date | 2024-05-29 |
+| Author | Mttttt |
+
+## Overview
+
+Recover the flag from a packed Linux executable.
+
+<details>
+<summary>Original challenge description</summary>
+
 Reverse this linux executable? [binary](https://artifacts.picoctf.net/c_titan/20/out)
 
 - *Category*: **Reverse Engineering**
 - *Difficulty*: **Meduim**
 
-## Solution
+</details>
+
+## Analysis
+
+After UPX unpacking, the flag could be recovered from the executable's strings or through static analysis.
+
 Download the file and find out that this executable was packed with UPX
 
 Decompile it with UPX:
@@ -123,5 +141,6 @@ In this code we can find our encoded flag
 
 Decode it from HEX and result will be out final flag
 
-## Answer
+## Result
+
 `picoCTF{U9X_UnP4ck1N6_B1n4Ri3S_bdd84893}`

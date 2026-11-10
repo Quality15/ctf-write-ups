@@ -1,13 +1,21 @@
 # Blame Game
-Write-Up by **Mttttt** *2024-05-29*
 
-## Task description
-.
+| Field | Value |
+| --- | --- |
+| Platform | picoCTF 2024 |
+| Category | General Skills |
+| Difficulty | Easy |
+| Date | 2024-05-29 |
+| Author | Mttttt |
 
-- Category: Web Exploitation
-- Difficulty: Easy
+## Overview
 
-## Solution
+Locate the flag in the Git history associated with a project file.
+
+## Analysis
+
+The flag appeared in the author field of a commit affecting the file.
+
 ```bash
 git log message.py
 ```
@@ -24,5 +32,7 @@ Date:   Tue Mar 12 00:07:01 2024 +0000
   
    create top secret project
 ```
-## Answer
+
+## Result
+
 `picoCTF{@sk_th3_1nt3rn_d2d29f22}`

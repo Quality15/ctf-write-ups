@@ -1,13 +1,27 @@
----
-created at: 2026-04-29 || 16:44
-category: General Skills
-tags:
-  - picoCTF_2026
-difficulty: Easy
----
-## Task description
+# Printer Shares
+
+| Field | Value |
+| --- | --- |
+| Platform | picoCTF 2026 |
+| Category | General Skills |
+| Difficulty | Easy |
+| Date | 2026-04-29 16:44 |
+
+## Overview
+
+Locate a file submitted to the network print server.
+
+<details>
+<summary>Original challenge description</summary>
+
 Oops! Someone accidentally sent an important file to a network printer—can you retrieve it from the print server?
-## Solution
+
+</details>
+
+## Analysis
+
+The relevant file was available through an SMB share.
+
 In the first hint, tasks said us that printer works with a SMB server
 Let's check what we can see in SMB:
 ```bash
@@ -36,5 +50,7 @@ Now we have flag:
 ```bash
 cat flag.txt
 ```
-## Flag
+
+## Result
+
 `picoCTF{5mbpr1nter5h4re57a400ec3}`

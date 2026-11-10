@@ -1,9 +1,28 @@
 # Cyborg
-Write-Up by **Mttttt** *2025-04-24*
 
-## Room Description
+| Field | Value |
+| --- | --- |
+| Platform | TryHackMe |
+| Category | Web and Linux Privilege Escalation |
+| Difficulty | Easy |
+| Date | 2025-04-24 |
+| Author | Mttttt |
+
+## Overview
+
+Examine an encrypted backup and the host configuration.
+
+<details>
+<summary>Original challenge description</summary>
+
 A box involving encrypted archives, source code analysis and more.
-## Solution
+
+</details>
+
+## Analysis
+
+The investigation identified exposed backup material and an unsafe privileged script.
+
 ### nmap
 **22**, **80**
 ### dirsearch
@@ -98,7 +117,9 @@ So, lets use command to read root.txt file:
 sudo /etc/mp3backups/baskup.sh -c "cat /root/root.txt"
 ```
 `flag{Than5s_f0r_play1ng_H0p£_y0u_enJ053d}`
-## Questions
+
+## Result
+
 1. *Question #1*. Scan the machine, how many ports are open?
    *Answer*: **2**
 2. *Question #2.* What service is running on port 22?

@@ -1,6 +1,19 @@
 # Neighbour
-Write-Up by **Mttttt** *2024-06-09*
-## Room Description
+
+| Field | Value |
+| --- | --- |
+| Platform | TryHackMe |
+| Category | Web Exploitation |
+| Difficulty | Easy |
+| Date | 2024-06-09 |
+| Author | Mttttt |
+
+## Overview
+
+Assess whether the profile interface enforces access restrictions between accounts.
+
+<details>
+<summary>Original challenge description</summary>
 
 Check out our new cloud service, Authentication Anywhere -- log in from anywhere you would like! Users can enter their username and password, for a totally secure login process! You definitely wouldn't be able to find any secrets that other people have in their profile, right?
 
@@ -14,7 +27,11 @@ Check out similar content on TryHackMe:
 
 - [IDOR](https://tryhackme.com/room/idor)
 
-## Solution
+</details>
+
+## Analysis
+
+The application exposed another user's profile through an insecure direct object reference.
 
 Go to the site with our IP:
 http://10.10.146.220/
@@ -39,7 +56,7 @@ http://10.10.146.220/profile.php?user=admin
 
 And see our flag on site
 
-## Questions
+## Result
 
 1. *Question #1*. Find the flag on your neighbor's logged in page!
    *Answer*: **flag{66be95c478473d91a5358f2440c7af1f}**

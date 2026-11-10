@@ -1,13 +1,27 @@
----
-created at: 2026-04-29 || 17:08
-category: General Skills
-tags:
-  - picoCTF_2026
-difficulty: Easy
----
-## Task description
+# Piece by Piece
+
+| Field | Value |
+| --- | --- |
+| Platform | picoCTF 2026 |
+| Category | General Skills |
+| Difficulty | Easy |
+| Date | 2026-04-29 17:08 |
+
+## Overview
+
+Reconstruct the archive from the file fragments in the challenge account.
+
+<details>
+<summary>Original challenge description</summary>
+
 After logging in, you will find multiple file parts in your home directory. These parts need to be combined and extracted to reveal the flag.
-## Solution
+
+</details>
+
+## Analysis
+
+Concatenating the fragments in order restored the ZIP archive.
+
 ### Step 1
 Login with SSH:
 ```bash
@@ -37,5 +51,7 @@ extracting: flag.txt                 
 ctf-player@pico-chall$ cat flag.txt    
 picoCTF{z1p_and_spl1t_f1l3s_4r3_fun_28d309dc}
 ```
-## Flag
+
+## Result
+
 `picoCTF{z1p_and_spl1t_f1l3s_4r3_fun_28d309dc}`

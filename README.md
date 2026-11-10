@@ -197,42 +197,39 @@ A non-exhaustive list of security tools and utilities utilized across these solu
 ---
 
 <a id="template"></a>
-## 📝 Write-up Template
+## Write-up Template
 
-For consistent styling and Obsidian compatibility, write-ups follow this template:
+Use the same section order for challenges and rooms. Include the date and author when documented. References are optional.
 
-````markdown
----
-created at: YYYY-MM-DD || HH:MM
-category: <Category Name>
-tags:
-  - <Event_Tag>
-difficulty: <Easy | Medium | Hard>
----
+```markdown
+# Challenge or Room Name
 
-# <Challenge or Room Name>
+| Field | Value |
+| --- | --- |
+| Platform | Platform and event year, where applicable |
+| Category | Challenge category |
+| Difficulty | Easy, Medium, or Hard |
+| Date | YYYY-MM-DD |
+| Author | Author name |
 
-## Task / Room Description
-> Brief overview of the challenge prompt, goal, and provided files or URLs.
+## Overview
 
-## Solution
+State the objective and identify the relevant challenge materials. Include the
+original prompt in a collapsible section when it provides useful context.
 
-### 1. Reconnaissance & Enumeration
-- Initial discovery commands, nmap/ffuf outputs, and findings.
+## Analysis
 
-### 2. Vulnerability Analysis
-- Explanation of the root vulnerability (source code, protocol flaw, misconfiguration).
+Describe the observations and explain how they support the findings. Use
+descriptive subheadings for longer analyses.
 
-### 3. Exploitation & Flag
-- Step-by-step commands, payload construction, or script execution.
-```bash
-# Exploit commands or payload here
+## Result
+
+Record the flag or the answers requested by the challenge.
+
+## References
+
+List sources cited in the write-up.
 ```
-- **Flag**: `picoCTF{...}` or `THM{...}`
-
-## Key Takeaways
-- What was learned and how this vulnerability is prevented.
-````
 
 ---
 

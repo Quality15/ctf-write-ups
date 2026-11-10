@@ -1,16 +1,30 @@
----
-created at: 2026-04-29 || 16:21
-category: General Skills
-tags:
-  - picoCTF_2026
-difficulty: Easy
----
-## Task description
+# MY GIT
+
+| Field | Value |
+| --- | --- |
+| Platform | picoCTF 2026 |
+| Category | General Skills |
+| Difficulty | Easy |
+| Date | 2026-04-29 16:21 |
+
+## Overview
+
+Determine how the challenge server evaluates Git commit identity.
+
+<details>
+<summary>Original challenge description</summary>
+
 I have built my own Git server with my own rules! You can clone the challenge repo using the command below. 
 `git clone ssh://git@<unique-ip>:<port>/git/challenge.git` 
 Here's the password: `d9df7038` 
 Check the README to get your flag!
-## Solution
+
+</details>
+
+## Analysis
+
+The challenge relied on author metadata supplied by the Git client.
+
 ### Step 1
 Clone repository with command given:
 `git clone ssh://git@<unique-ip>:<port>/git/challenge.git`
@@ -55,5 +69,7 @@ remote: Here's your flag: picoCTF{1mp3rs0n4t4_g17_345y_220a9833}
 To ssh://foggy-cliff.picoctf.net:59249/git/challenge.git  
    0dcb7df..afbdf1f  master -> master
 ```
-## Flag
+
+## Result
+
 `picoCTF{1mp3rs0n4t4g17345y220a9833}`

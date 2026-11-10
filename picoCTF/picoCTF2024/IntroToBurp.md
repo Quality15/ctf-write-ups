@@ -1,13 +1,31 @@
 # IntroToBurp
-Write-Up by **Mttttt** *2024-05-29*
 
-## Task description
+| Field | Value |
+| --- | --- |
+| Platform | picoCTF 2024 |
+| Category | Web Exploitation |
+| Difficulty | Easy |
+| Date | 2024-05-29 |
+| Author | Mttttt |
+
+## Overview
+
+Evaluate the registration flow's enforcement of one-time password verification.
+
+<details>
+<summary>Original challenge description</summary>
+
 .
 
 - *Category*: **General Skills**
 - *Difficulty*: **Easy**
 
-## Solution
+</details>
+
+## Analysis
+
+The server accepted a verification request without the expected one-time password field.
+
 Complete registration on site
 
 Site will ask us for a OTP code
@@ -40,5 +58,6 @@ And send the request
 
 We will get our flag
 
-## Answer
+## Result
+
 `picoCTF{#0TP_Bypvss_SuCc3$S_b3fa4f1a}`

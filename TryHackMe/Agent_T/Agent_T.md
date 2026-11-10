@@ -1,14 +1,32 @@
 # Agent T
-Write-Up by **Mttttt** *2024-05-30*
 
-## Room Description
+| Field | Value |
+| --- | --- |
+| Platform | TryHackMe |
+| Category | Web Exploitation |
+| Difficulty | Easy |
+| Date | 2024-05-30 |
+| Author | Mttttt |
+
+## Overview
+
+Assess the security of the room's HTTP service.
+
+<details>
+<summary>Original challenge description</summary>
+
 Agent T uncovered this website, which looks innocent enough, but something seems off about how the server responds...
 
 After deploying the vulnerable machine attached to this task, please wait a couple of minutes for it to respond.
 #### Hint:
 Look closely at the HTTP headers when you request the first page...
 
-## Solution
+</details>
+
+## Analysis
+
+The server response disclosed a PHP development build associated with a backdoor.
+
 **IP of machine:** `10.10.169.226`
 
 Do a simple nmap scanning
@@ -75,6 +93,7 @@ See our **flag.txt** file
 Read it
 `cat /flag.txt`
 
-## Questions
+## Result
+
 1. *Question #1*. **What is the flag?**
    *Answer*: `flag{4127d0530abf16d6d23973e3df8dbecb}`

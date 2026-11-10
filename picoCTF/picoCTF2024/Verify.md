@@ -1,7 +1,20 @@
 # Verify
-Write-Up by **Mttttt** *2024-05-29*
 
-## Task description
+| Field | Value |
+| --- | --- |
+| Platform | picoCTF 2024 |
+| Category | Forensics |
+| Difficulty | Easy |
+| Date | 2024-05-29 |
+| Author | Mttttt |
+
+## Overview
+
+Identify the authentic challenge file using its SHA-256 checksum.
+
+<details>
+<summary>Original challenge description</summary>
+
 People keep trying to trick my players with imitation flags. I want to make sure they get the real thing! I'm going to provide the SHA-256 hash and a decrypt script to help you know that my flags are legitimate. You can download the challenge files here:
 
 - `[challenge.zip](https://artifacts.picoctf.net/c_rhea/20/challenge.zip)`
@@ -9,7 +22,12 @@ People keep trying to trick my players with imitation flags. I want to make sure
 - *Category*: **Forensics**
 - *Difficulty*: **Easy**
 
-## Solution
+</details>
+
+## Analysis
+
+The checksum identified the candidate file to process with the supplied decryption script.
+
 I tried with downloading file `challanged.zip` but final solultion wasn't correct
 
 Alright, connect to ssh
@@ -42,5 +60,6 @@ Then use script with this file:
 ./decrypt.sh files/87590c24
 ```
 
-## Answer
+## Result
+
 `picoCTF{trust_but_verify_87590c24}`

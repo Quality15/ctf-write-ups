@@ -1,13 +1,31 @@
 # interencdec
-Write-Up by **Mttttt** *2024-05-28*
 
-## Task description
+| Field | Value |
+| --- | --- |
+| Platform | picoCTF 2024 |
+| Category | Cryptography |
+| Difficulty | Easy |
+| Date | 2024-05-28 |
+| Author | Mttttt |
+
+## Overview
+
+Recover the flag from the encoded challenge file.
+
+<details>
+<summary>Original challenge description</summary>
+
 Can you get the real meaning from this file. Download the file [here](https://artifacts.picoctf.net/c_titan/109/enc_flag).
 
 - *Category*: **Cryptography**
 - *Difficulty*: **Easy**
 
-## Solution
+</details>
+
+## Analysis
+
+The file combined two layers of Base64 encoding with a Caesar cipher.
+
 Downloaded file content:
 ```
 YidkM0JxZGtwQlRYdHFhR3g2YUhsZmF6TnFlVGwzWVROclgyMHdNakV5TnpVNGZRPT0nCg==
@@ -42,5 +60,6 @@ The correct number was **19**
 
 ![[picoCTF_interencedec_solution.png]]
 
-## Answer
+## Result
+
 `picoCTF{caesar_d3cr9pt3d_f0212758}`
